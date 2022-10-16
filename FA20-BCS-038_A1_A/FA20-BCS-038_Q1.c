@@ -48,14 +48,14 @@ int main(){
 
 		printf("Characters: %d\n", characters);
 		printf("Words: %d\n", words);
-		printf("\nChild  process ended!\n");
+		printf("\nChild process ended!\n");
+		exit(0);
 	} else {
 		printf("Parent Process Started!\n");
 		char* fileName = "data.txt";
 		close(fds[0]);
 		write(fds[1], fileName, sizeof(fileName));
 		wait(NULL);
-		printf("Parent Process Ended!\n");
 	}
 
 	return 0;
