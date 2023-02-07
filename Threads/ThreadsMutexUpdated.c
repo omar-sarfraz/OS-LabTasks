@@ -14,7 +14,7 @@ void * print(void *input){
 	printf("%d started\n", counter);
 	sleep(2);
 	printf("%d finish\n", counter);
-	pthread_mutex_unlock(&lock);	
+	pthread_mutex_unlock(&lock);
 	pthread_exit(NULL);
 }
 
@@ -25,8 +25,8 @@ int main(){
 	pthread_join(id1, NULL);
 
 	pthread_create(&id2,NULL,print,NULL);
-	pthread_join(id2, NULL);		
+	pthread_join(id2, NULL);
 
-	return 0;
 	pthread_mutex_destroy(&lock);
+	return 0;
 }
